@@ -129,7 +129,7 @@ class GetVoucherTransactionResponse extends GetTransactionResponse implements Js
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize()
+    public function jsonSerialize() : mixed
     {
         $json = array();
         $json['statement_descriptor']      = $this->statementDescriptor;
@@ -142,7 +142,7 @@ class GetVoucherTransactionResponse extends GetTransactionResponse implements Js
         $json['acquirer_return_code']      = $this->acquirerReturnCode;
         $json['operation_type']            = $this->operationType;
         $json['card']                      = $this->card;
-        $json = array_merge($json, parent::jsonSerialize());
+        $json = array_merge($json, parent::jsonSerialize() : mixed);
 
         return $json;
     }

@@ -78,7 +78,7 @@ class GetBankTransferTransactionResponse extends GetTransactionResponse implemen
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize()
+    public function jsonSerialize() : mixed
     {
         $json = array();
         $json['url']         = $this->url;
@@ -87,7 +87,7 @@ class GetBankTransferTransactionResponse extends GetTransactionResponse implemen
         $json['paid_at']     = isset($this->paidAt) ?
             DateTimeHelper::toRfc3339DateTime($this->paidAt) : null;
         $json['paid_amount'] = $this->paidAmount;
-        $json = array_merge($json, parent::jsonSerialize());
+        $json = array_merge($json, parent::jsonSerialize() : mixed);
 
         return $json;
     }

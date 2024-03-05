@@ -147,7 +147,7 @@ class GetCreditCardTransactionResponse extends GetTransactionResponse implements
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize()
+    public function jsonSerialize() : mixed
     {
         $json = array();
         $json['statement_descriptor']      = $this->statementDescriptor;
@@ -162,7 +162,7 @@ class GetCreditCardTransactionResponse extends GetTransactionResponse implements
         $json['acquirer_return_code']      = $this->acquirerReturnCode;
         $json['installments']              = $this->installments;
         $json['threed_authentication_url'] = $this->threedAuthenticationUrl;
-        $json = array_merge($json, parent::jsonSerialize());
+        $json = array_merge($json, parent::jsonSerialize() : mixed);
 
         return $json;
     }

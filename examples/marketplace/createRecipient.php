@@ -5,17 +5,17 @@ require_once  "../vendor/autoload.php" ;
 $basicAuthUserName = 'basicAuthUserName'; // The username to use with basic authentication
 $basicAuthPassword = 'basicAuthPassword'; // The password to use with basic authentication
 
-$apiclient = new BetaPayApiLib\BetaPayApiClient($basicAuthUserName, $basicAuthPassword);
+$apiclient = new BspagApiLib\BspagApiClient($basicAuthUserName, $basicAuthPassword);
 
 $recipientsController = $apiClient->getRecipients();
 
-$request = new \BetaPayApiLib\Models\CreateRecipientRequest();
+$request = new \BspagApiLib\Models\CreateRecipientRequest();
 $request->name = "Katerine Janeway";
 $request->email = "janeway@starfleet.com";
 $request->description = "Recebedor da nave Voyager";
 $request->document = "55342429064";
 $request->type = "individual";
-$request->defaultBankAccount = new \BetaPayApiLib\Models\CreateBankAccountRequest();
+$request->defaultBankAccount = new \BspagApiLib\Models\CreateBankAccountRequest();
 $request->defaultBankAccount->holderName = "Katerine Janeway";
 $request->defaultBankAccount->holderType = "individual";
 $request->defaultBankAccount->holderDocument = "55342429064";

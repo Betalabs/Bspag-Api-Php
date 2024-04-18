@@ -5,20 +5,20 @@ require_once  "../vendor/autoload.php" ;
 $basicAuthUserName = 'basicAuthUserName'; // The username to use with basic authentication
 $basicAuthPassword = 'basicAuthPassword'; // The password to use with basic authentication
 
-$apiclient = new BetaPayApiLib\BetaPayApiClient($basicAuthUserName, $basicAuthPassword);
+$apiclient = new BspagApiLib\BspagApiClient($basicAuthUserName, $basicAuthPassword);
 
 $subscriptionsController = $apiClient->getSubscriptions();
 
 $subscriptionId = "sub_ExAmPlExxxxxxxxx";
 
-$request = new \BetaPayApiLib\Models\UpdateSubscriptionCardRequest();
-$request->card = new \BetaPayApiLib\Models\CreateCardRequest();
+$request = new \BspagApiLib\Models\UpdateSubscriptionCardRequest();
+$request->card = new \BspagApiLib\Models\CreateCardRequest();
 $request->card->number = "4532912167490007";
 $request->card->holderName = "Benjamin Sisko";
 $request->card->expMonth = 1;
 $request->card->expYear = 2028;
 $request->card->cvv = "123";
-$request->card->billingAddress = new \BetaPayApiLib\Models\CreateAddressRequest();
+$request->card->billingAddress = new \BspagApiLib\Models\CreateAddressRequest();
 $request->card->billingAddress->line1 = "Av. Paulista";
 $request->card->billingAddress->line2 = "10º andar";
 $request->card->billingAddress->zipCode = "01311000";

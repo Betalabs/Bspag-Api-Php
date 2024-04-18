@@ -5,12 +5,12 @@ require_once  "../vendor/autoload.php" ;
 $basicAuthUserName = 'basicAuthUserName'; // The username to use with basic authentication
 $basicAuthPassword = 'basicAuthPassword'; // The password to use with basic authentication
 
-$apiclient = new BetaPayApiLib\BetaPayApiClient($basicAuthUserName, $basicAuthPassword);
+$apiclient = new BspagApiLib\BspagApiClient($basicAuthUserName, $basicAuthPassword);
 
 $chargesController = $apiClient->getCharges();
 
 $chargeId = "ch_ExAmPlExxxxxxxxx";
-$request = new \BetaPayApiLib\Models\CreateCaptureChargeRequest();
+$request = new \BspagApiLib\Models\CreateCaptureChargeRequest();
 $request->code = "new_code";
 $request->amount = 100; // this value should be in cents
 

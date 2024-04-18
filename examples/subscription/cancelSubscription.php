@@ -5,13 +5,13 @@ require_once  "../vendor/autoload.php" ;
 $basicAuthUserName = 'basicAuthUserName'; // The username to use with basic authentication
 $basicAuthPassword = 'basicAuthPassword'; // The password to use with basic authentication
 
-$apiclient = new BetaPayApiLib\BetaPayApiClient($basicAuthUserName, $basicAuthPassword);
+$apiclient = new BspagApiLib\BspagApiClient($basicAuthUserName, $basicAuthPassword);
 
 $subscriptionsController = $apiClient->getSubscriptions();
 
 $subscriptionId = "sub_ExAmPlExxxxxxxxx";
 
-$request = new \BetaPayApiLib\Models\CreateCancelSubscriptionRequest();
+$request = new \BspagApiLib\Models\CreateCancelSubscriptionRequest();
 $request->cancelPendingInvoices = true;
 
 $result = $subscriptionsController->cancelSubscription($subscriptionId, $request);

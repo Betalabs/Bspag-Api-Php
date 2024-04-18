@@ -1,8 +1,8 @@
 {
-    "name": "betalabs/betapay-api-php",
+    "name": "betalabs/bspag-api-php",
     "type": "library",
-    "description": "BetaPay API",
-    "keywords": ["BetapayApi","API","SDK"],
+    "description": "Bspag API",
+    "keywords": ["BspagApi","API","SDK"],
     "homepage": "https://apimatic.io",
     "license": "MIT",
     "authors": [
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BetaPayApiLib\\": "src/"
+            "BspagApiLib\\": "src/"
         }
     }
 }

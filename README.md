@@ -1,2 +1,2 @@
-# BetaPay-Api-Php
-PHP APÌ Integration with BetaPay
+# Bspag-Api-Php
+PHP APÌ Integration with Bspag

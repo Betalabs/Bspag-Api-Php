@@ -190,7 +190,7 @@ class GetOrderResponse implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['id']          = $this->id;

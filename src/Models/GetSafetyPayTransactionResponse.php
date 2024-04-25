@@ -69,7 +69,7 @@ class GetSafetyPayTransactionResponse extends GetTransactionResponse implements 
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['url']         = $this->url;
@@ -77,7 +77,7 @@ class GetSafetyPayTransactionResponse extends GetTransactionResponse implements 
         $json['paid_at']     = isset($this->paidAt) ?
             DateTimeHelper::toRfc3339DateTime($this->paidAt) : null;
         $json['paid_amount'] = $this->paidAmount;
-        $json = array_merge($json, parent::jsonSerialize() : mixed);
+        $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
     }

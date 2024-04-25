@@ -46,7 +46,7 @@ class CreateCheckoutDebitCardPaymentRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['statement_descriptor'] = $this->statementDescriptor;

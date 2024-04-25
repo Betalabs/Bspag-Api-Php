@@ -137,7 +137,7 @@ class GetPrivateLabelTransactionResponse extends GetTransactionResponse implemen
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['statement_descriptor']      = $this->statementDescriptor;
@@ -151,7 +151,7 @@ class GetPrivateLabelTransactionResponse extends GetTransactionResponse implemen
         $json['acquirer_message']          = $this->acquirerMessage;
         $json['acquirer_return_code']      = $this->acquirerReturnCode;
         $json['installments']              = $this->installments;
-        $json = array_merge($json, parent::jsonSerialize() : mixed);
+        $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
     }

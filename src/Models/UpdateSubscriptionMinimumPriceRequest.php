@@ -36,7 +36,7 @@ class UpdateSubscriptionMinimumPriceRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['minimum_price'] = $this->minimumPrice;

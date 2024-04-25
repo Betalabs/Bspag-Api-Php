@@ -194,7 +194,7 @@ class GetBoletoTransactionResponse extends GetTransactionResponse implements Jso
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['url']                  = $this->url;
@@ -217,7 +217,7 @@ class GetBoletoTransactionResponse extends GetTransactionResponse implements Jso
         $json['credit_at']            = isset($this->creditAt) ?
             DateTimeHelper::toRfc3339DateTime($this->creditAt) : null;
         $json['statement_descriptor'] = $this->statementDescriptor;
-        $json = array_merge($json, parent::jsonSerialize() : mixed);
+        $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
     }

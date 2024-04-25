@@ -57,7 +57,7 @@ class GetTransferSettingsResponse implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['transfer_enabled']  = $this->transferEnabled;

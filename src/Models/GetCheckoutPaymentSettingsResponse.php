@@ -100,7 +100,7 @@ class GetCheckoutPaymentSettingsResponse implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['success_url']              = $this->successUrl;

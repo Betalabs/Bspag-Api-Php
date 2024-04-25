@@ -37,7 +37,7 @@ class UpdateSubscriptionAffiliationIdRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['gateway_affiliation_id'] = $this->gatewayAffiliationId;

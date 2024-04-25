@@ -89,7 +89,7 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['qr_code']                = $this->qrCode;
@@ -98,7 +98,7 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
         $json['additional_information'] = $this->additionalInformation;
         $json['end_to_end_id']          = $this->endToEndId;
         $json['payer']                  = $this->payer;
-        $json = array_merge($json, parent::jsonSerialize() : mixed);
+        $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
     }

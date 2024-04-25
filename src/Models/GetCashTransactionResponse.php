@@ -39,11 +39,11 @@ class GetCashTransactionResponse extends GetTransactionResponse implements JsonS
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['description'] = $this->description;
-        $json = array_merge($json, parent::jsonSerialize() : mixed);
+        $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
     }

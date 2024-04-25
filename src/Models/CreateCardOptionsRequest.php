@@ -38,7 +38,7 @@ class CreateCardOptionsRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['verify_card'] = $this->verifyCard;

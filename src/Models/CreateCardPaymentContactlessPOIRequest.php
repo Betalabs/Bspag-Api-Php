@@ -75,7 +75,7 @@ class CreateCardPaymentContactlessPOIRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['system_name']    = $this->systemName;

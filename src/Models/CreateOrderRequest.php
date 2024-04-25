@@ -171,7 +171,7 @@ class CreateOrderRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['items']             = $this->items;

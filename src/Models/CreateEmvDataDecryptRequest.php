@@ -53,7 +53,7 @@ class CreateEmvDataDecryptRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['cipher'] = $this->cipher;

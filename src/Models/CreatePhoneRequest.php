@@ -53,7 +53,7 @@ class CreatePhoneRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['country_code'] = $this->countryCode;

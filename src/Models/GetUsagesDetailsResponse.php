@@ -84,7 +84,7 @@ class GetUsagesDetailsResponse implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['subscription_id'] = $this->subscriptionId;

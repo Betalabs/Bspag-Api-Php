@@ -17,7 +17,7 @@ class Configuration
      * The base Uri for API calls
      * @var string
      */
-    public static $BASEURI = 'https://bspag.betalabs.net/api/v1';
+    public static $BASEURI = 'https://betapay.apps.betalabs.net/api/v1';
 
     /**
      * The username to use with basic authentication

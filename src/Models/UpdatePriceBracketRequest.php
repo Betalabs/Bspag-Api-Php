@@ -64,7 +64,7 @@ class UpdatePriceBracketRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['start_quantity'] = $this->startQuantity;

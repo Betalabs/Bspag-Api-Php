@@ -45,7 +45,7 @@ class CreatePhonesRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['home_phone']   = $this->homePhone;

@@ -38,7 +38,7 @@ class CreatePeriodRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['end_at'] = isset($this->endAt) ?

@@ -65,7 +65,7 @@ class CreateEmvDecryptRequest implements JsonSerializable
     /**
      * Encode this object to JSON
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize()
     {
         $json = array();
         $json['icc_data']             = $this->iccData;

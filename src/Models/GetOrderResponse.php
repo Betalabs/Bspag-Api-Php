@@ -74,6 +74,13 @@ class GetOrderResponse implements JsonSerializable
      */
     public $updatedAt;
 
+
+    /**
+     * @var string|null $description public property
+     */
+    public $description;
+
+
     /**
      * @todo Write general description for this property
      * @required
@@ -165,24 +172,25 @@ class GetOrderResponse implements JsonSerializable
     public function __construct()
     {
         if (18 == func_num_args()) {
-            $this->id         = func_get_arg(0);
-            $this->code       = func_get_arg(1);
-            $this->currency   = func_get_arg(2);
-            $this->items      = func_get_arg(3);
-            $this->customer   = func_get_arg(4);
-            $this->status     = func_get_arg(5);
-            $this->createdAt  = func_get_arg(6);
-            $this->updatedAt  = func_get_arg(7);
-            $this->charges    = func_get_arg(8);
-            $this->invoiceUrl = func_get_arg(9);
-            $this->shipping   = func_get_arg(10);
-            $this->metadata   = func_get_arg(11);
-            $this->checkouts  = func_get_arg(12);
-            $this->ip         = func_get_arg(13);
-            $this->sessionId  = func_get_arg(14);
-            $this->location   = func_get_arg(15);
-            $this->device     = func_get_arg(16);
-            $this->closed     = func_get_arg(17);
+            $this->id          = func_get_arg(0);
+            $this->code        = func_get_arg(1);
+            $this->currency    = func_get_arg(2);
+            $this->items       = func_get_arg(3);
+            $this->customer    = func_get_arg(4);
+            $this->status      = func_get_arg(5);
+            $this->description = func_get_arg(6);
+            $this->createdAt   = func_get_arg(7);
+            $this->updatedAt   = func_get_arg(8);
+            $this->charges     = func_get_arg(9);
+            $this->invoiceUrl  = func_get_arg(10);
+            $this->shipping    = func_get_arg(11);
+            $this->metadata    = func_get_arg(12);
+            $this->checkouts   = func_get_arg(13);
+            $this->ip          = func_get_arg(14);
+            $this->sessionId   = func_get_arg(15);
+            $this->location    = func_get_arg(16);
+            $this->device      = func_get_arg(17);
+            $this->closed      = func_get_arg(18);
         }
     }
 
@@ -199,6 +207,7 @@ class GetOrderResponse implements JsonSerializable
         $json['items']       = $this->items;
         $json['customer']    = $this->customer;
         $json['status']      = $this->status;
+        $json['description'] = $this->description;
         $json['created_at']  = DateTimeHelper::toRfc3339DateTime($this->createdAt);
         $json['updated_at']  = DateTimeHelper::toRfc3339DateTime($this->updatedAt);
         $json['charges']     = $this->charges;

@@ -57,7 +57,7 @@ if ($response->isSuccess()) {
 - **Cancelamento e Estorno:** Realize cancelamentos ou estornos de transações diretamente pelo SDK.
 
 ### Documentação
-A documentação completa da API BsPag está disponível em nosso [Portal de Desenvolvedores](https://bspag.com/docs).
+A documentação completa da API BsPag está em desenvolvimento. (https://www.bspag.com.br).
 
 ### Suporte
 Se encontrar algum problema ou tiver dúvidas, abra uma issue neste repositório ou entre em contato com nosso suporte.
@@ -119,8 +119,6 @@ if ($response->isSuccess()) {
 - **Transaction Creation:** Support for different payment methods (credit card, boleto, etc.).
 - **Cancellation and Refunds:** Cancel or refund transactions directly using the SDK.
 
-### Documentation
-The full BsPag API documentation is available on our [Developer Portal](https://bspag.com/docs).
 
 ### Support
 If you encounter any issues or have questions, please open an issue in this repository or contact our support team.

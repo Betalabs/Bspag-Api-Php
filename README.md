@@ -54,9 +54,7 @@ if ($response->isSuccess()) {
 
 ### Funcionalidades Principais
 - **Criação de Transações:** Suporte a diferentes métodos de pagamento (cartão de crédito, boleto, etc.).
-- **Consultas:** Obtenha o status e detalhes de uma transação por meio de consultas à API.
 - **Cancelamento e Estorno:** Realize cancelamentos ou estornos de transações diretamente pelo SDK.
-- **Suporte a Subcontas:** Facilita a gestão de múltiplos recebedores em transações do tipo marketplace.
 
 ### Documentação
 A documentação completa da API BsPag está disponível em nosso [Portal de Desenvolvedores](https://bspag.com/docs).
@@ -119,9 +117,7 @@ if ($response->isSuccess()) {
 
 ### Main Features
 - **Transaction Creation:** Support for different payment methods (credit card, boleto, etc.).
-- **Queries:** Retrieve the status and details of a transaction by querying the API.
 - **Cancellation and Refunds:** Cancel or refund transactions directly using the SDK.
-- **Subaccount Support:** Manage multiple payees in marketplace-style transactions.
 
 ### Documentation
 The full BsPag API documentation is available on our [Developer Portal](https://bspag.com/docs).

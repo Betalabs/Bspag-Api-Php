@@ -130,6 +130,8 @@ class CreateCardRequest implements JsonSerializable
      */
     public $token;
 
+    public $threeDSecure = [];
+
     /**
      * Constructor to set initial or default values of member properties
      * @param string                   $number           Initialization value for $this->number
@@ -148,6 +150,7 @@ class CreateCardRequest implements JsonSerializable
      * @param string                   $label            Initialization value for $this->label
      * @param string                   $id               Initialization value for $this->id
      * @param string                   $token            Initialization value for $this->token
+     * @param array                    $threeDSecure     Initialization value for $this->threeDSecure
      */
     public function __construct()
     {
@@ -169,6 +172,7 @@ class CreateCardRequest implements JsonSerializable
                 $this->label            = func_get_arg(13);
                 $this->id               = func_get_arg(14);
                 $this->token            = func_get_arg(15);
+                $this->threeDSecure     = func_get_arg(16);
                 break;
 
             default:
@@ -200,6 +204,9 @@ class CreateCardRequest implements JsonSerializable
         $json['label']              = $this->label;
         $json['id']                 = $this->id;
         $json['token']              = $this->token;
+        if (!empty($this->threeDSecure)) {
+            $json['three_d_secure'] = $this->threeDSecure;
+        }
 
         return $json;
     }

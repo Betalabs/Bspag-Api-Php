@@ -52,6 +52,39 @@ if ($response->isSuccess()) {
 }
 ```
 
+### Pix Automático
+
+Controller escrito à mão (`$client->getPixAutomatic()`), que **recebe e devolve arrays** e chama os endpoints
+`/api/v1/pix-automatic/*` do Bspag. Valores em centavos. Erros viram `Exceptions\ErrorException` (corpo em
+`getResponseBody()`).
+
+```php
+$pix = $client->getPixAutomatic();
+
+$authorization = $pix->createAuthorization([
+    'contract' => ['name' => 'Clube do Café', 'description' => 'Assinatura Clube do Café'],
+    'customer' => [/* mesmo formato do createOrder */],
+    'calendar' => ['start_date' => '2026-11-03', 'periodicity' => 'monthly'],
+    'allows_retries' => true,
+    'amount' => ['mode' => 'variable', 'value' => 5000],
+    'immediate_payment' => ['amount' => 4990, 'reference' => 'subscription-77'],
+], $idempotencyKey);
+// ['id' => ..., 'status' => 'pending', 'qr_code_url' => ..., 'copy_and_paste' => ..., 'immediate_payment' => [...]]
+
+$pix->getAuthorization($authorization['id']);      // consulta o estado atual
+$charge = $pix->createCharge($authorization['id'], ['due_date' => '2026-12-03', 'amount' => 4990, 'description' => 'Assinatura - 12/2026']);
+$pix->retryCharge($charge['code'], ['date' => '2026-12-05']);
+$pix->cancelCharge($charge['code']);
+$pix->cancelAuthorization($authorization['id']);
+```
+
+Contrato completo (campos, janela D-10 a D-2, restrições): `docs/pix-automatico.md` do repositório do Bspag
+(`BetaPay`). Não há sandbox da Safe2Pay para esses endpoints.
+
+**Verificação:** o repositório não tem PHPUnit (a lib é gerada pelo APIMATIC). `tests/smoke_pix_automatic.php` sobe um
+servidor PHP embutido e confere, por HTTP real, método, caminho, cabeçalhos (Basic auth, `Idempotency-Key`), corpo e
+mapeamento de erros: `php tests/smoke_pix_automatic.php [caminho/do/vendor/autoload.php]`.
+
 ### Funcionalidades Principais
 - **Criação de Transações:** Suporte a diferentes métodos de pagamento (cartão de crédito, boleto, etc.).
 - **Cancelamento e Estorno:** Realize cancelamentos ou estornos de transações diretamente pelo SDK.

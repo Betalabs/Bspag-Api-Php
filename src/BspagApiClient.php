@@ -89,6 +89,14 @@ class BspagApiClient
         return Controllers\RecipientsController::getInstance();
     }
     /**
+     * Singleton access to Pix Automatico controller
+     * @return Controllers\PixAutomaticController The *Singleton* instance
+     */
+    public function getPixAutomatic()
+    {
+        return Controllers\PixAutomaticController::getInstance();
+    }
+    /**
      * Singleton access to Tokens controller
      * @return Controllers\TokensController The *Singleton* instance
      */
